@@ -6,3 +6,8 @@ sky:
     database: sky_take_out
     username: root
     password: SQLplayer@?
+  alioss:
+    endpoint: oss-cn-beijing.aliyuncs.com
+    access-key-id: LTAI5t7SZSjCavYRtGjqSRin
+    access-key-secret: XjzeB4BitTmulhcQdoT46gyZptl1PL
+    bucket-name: aquilon-my-sky-take-out
