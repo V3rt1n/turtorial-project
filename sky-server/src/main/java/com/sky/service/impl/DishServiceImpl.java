@@ -132,7 +132,6 @@ public class DishServiceImpl implements DishService {
      *
      * @param dishDTO
      */
-    //TODO 是否应该加上事务
     @Transactional
     public void updateWithFlavor(DishDTO dishDTO) {
         Dish dish = new Dish();
@@ -153,5 +152,18 @@ public class DishServiceImpl implements DishService {
             //向口味表插入n条数据
             dishFlavorMapper.insertBatch(flavors);
         }
+    }
+
+    public void startOrStop(Long id,Integer status) {
+        Dish dish = Dish.builder()
+                .status(status)
+                .id(id)
+                .build();
+        dishMapper.update(dish);
+    }
+    public List<Dish> findByCategoryId(Long categoryId) {
+        //TODO 要不要把status作为参数？
+        List<Dish> dishList = dishMapper.list(categoryId);
+        return dishList;
     }
 }
